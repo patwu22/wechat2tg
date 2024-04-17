@@ -163,9 +163,9 @@ wechatBot
     // 刷新缓存
     cache = await loadConfig()
     // 群聊未提及消息不转发,以及自己发送的消息不转发
-    if (message.self() || (!!fromRoom && !await message.mentionSelf() && (!!fromRoom && cache.whiteList !== undefined && await fromRoom.topic() !== '' &&!cache.whiteList.includes(await fromRoom.topic()))) || (!!fromRoom && cache.whiteList === undefined && !await message.mentionSelf()) || message.date() < startDate || talkerContact.type() === 2) {
-      return
-    }
+    //if (message.self() || (!!fromRoom && !await message.mentionSelf() && (!!fromRoom && cache.whiteList !== undefined && await fromRoom.topic() !== '' &&!cache.whiteList.includes(await fromRoom.topic()))) || (!!fromRoom && cache.whiteList === undefined && !await message.mentionSelf()) || message.date() < startDate || talkerContact.type() === 2) {
+    //  return
+    //}
     if (fromRoom != null) {
       msgStr = !!!alias ? talkerContact.name() + '(' + await fromRoom.topic() + '):\n' : alias + '[' + talkerContact.name() + ']' + '(' + await fromRoom.topic() + '):\n'
       // 保存发送者
